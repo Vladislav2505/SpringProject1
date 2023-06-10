@@ -7,9 +7,11 @@
 <body>
 <p th:text="${person.getFullName()} + ', ' + ${person.getYearOfBirth()}"/>
 
-<p th:if="${books.isEmpty()}">Человек пока не взял ни одной книги</p>
+<div th:if="${books.isEmpty()}">
+    <p>Человек пока не взял ни одной книги</p>
+    <hr/>
+</div>
 
-<hr/>
 <div th:if="${!books.isEmpty()}">
     <h2>Книги:</h2>
     <p th:each="book : ${books}"
